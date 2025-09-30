@@ -1,0 +1,34 @@
+{
+  "name": "notion-api-worker",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-08-26",
+  "workflows": [
+    {
+      "name": "api-documentation-workflow",
+      "binding": "API_WORKFLOW",
+      "class_name": "APIDocumentationWorkflow"
+    }
+  ],
+  "env": {
+    "production": {
+      "name": "api-documentation-workflow-prod",
+      "workflows": [
+        {
+          "name": "api-documentation-workflow-prod",
+          "binding": "API_WORKFLOW",
+          "class_name": "APIDocumentationWorkflow"
+        }
+      ]
+    },
+    "staging": {
+      "name": "api-documentation-workflow-staging",
+      "workflows": [
+        {
+          "name": "api-documentation-workflow-staging",
+          "binding": "API_WORKFLOW",
+          "class_name": "APIDocumentationWorkflow"
+        }
+      ]
+    }
+  }
+}
